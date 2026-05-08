@@ -1,0 +1,80 @@
+{
+  "_comment": "PLANTILLAS de providers adicionales. NO se carga este archivo: cuando consigas una API key nueva en build.nvidia.com, copia el bloque correspondiente DENTRO del objeto 'provider' de opencode.json y agrega la variable NVIDIA_API_KEY_* en .env",
+
+  "nvidia-deepseek": {
+    "npm": "@ai-sdk/openai-compatible",
+    "name": "NVIDIA Build - DeepSeek",
+    "options": {
+      "baseURL": "https://integrate.api.nvidia.com/v1",
+      "apiKey": "{env:NVIDIA_API_KEY_DEEPSEEK}"
+    },
+    "models": {
+      "deepseek-v3.2": {
+        "id": "deepseek-ai/deepseek-v3.2",
+        "name": "DeepSeek V3.2",
+        "tool_call": true,
+        "reasoning": true,
+        "options": { "max_tokens": 16384, "temperature": 0.6, "top_p": 0.95 }
+      },
+      "deepseek-v4-pro": {
+        "id": "deepseek-ai/deepseek-v4-pro",
+        "name": "DeepSeek V4 Pro",
+        "tool_call": true,
+        "reasoning": true,
+        "options": { "max_tokens": 16384, "temperature": 0.6, "top_p": 0.95 }
+      }
+    }
+  },
+
+  "nvidia-kimi": {
+    "npm": "@ai-sdk/openai-compatible",
+    "name": "NVIDIA Build - Kimi",
+    "options": {
+      "baseURL": "https://integrate.api.nvidia.com/v1",
+      "apiKey": "{env:NVIDIA_API_KEY_KIMI}"
+    },
+    "models": {
+      "kimi-k2": {
+        "id": "moonshotai/kimi-k2-instruct",
+        "name": "Kimi K2 Instruct",
+        "tool_call": true,
+        "options": { "max_tokens": 16384, "temperature": 0.6, "top_p": 0.9 }
+      }
+    }
+  },
+
+  "nvidia-qwen": {
+    "npm": "@ai-sdk/openai-compatible",
+    "name": "NVIDIA Build - Qwen",
+    "options": {
+      "baseURL": "https://integrate.api.nvidia.com/v1",
+      "apiKey": "{env:NVIDIA_API_KEY_QWEN}"
+    },
+    "models": {
+      "qwen3-coder": {
+        "id": "qwen/qwen3-coder-480b",
+        "name": "Qwen3 Coder 480B",
+        "tool_call": true,
+        "options": { "max_tokens": 16384, "temperature": 0.2, "top_p": 0.9 }
+      }
+    }
+  },
+
+  "nvidia-nemotron": {
+    "npm": "@ai-sdk/openai-compatible",
+    "name": "NVIDIA Build - Nemotron",
+    "options": {
+      "baseURL": "https://integrate.api.nvidia.com/v1",
+      "apiKey": "{env:NVIDIA_API_KEY_NEMOTRON}"
+    },
+    "models": {
+      "nemotron-3-super": {
+        "id": "nvidia/nemotron-3-super-120b-a12b",
+        "name": "Nemotron 3 Super 120B",
+        "tool_call": true,
+        "reasoning": true,
+        "options": { "max_tokens": 16384, "temperature": 0.5, "top_p": 0.95 }
+      }
+    }
+  }
+}

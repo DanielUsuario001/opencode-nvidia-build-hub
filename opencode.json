@@ -1,0 +1,164 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "autoupdate": true,
+  "share": "disabled",
+  "provider": {
+    "nvidia-mistral": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "NVIDIA Build - Mistral",
+      "options": {
+        "baseURL": "https://integrate.api.nvidia.com/v1",
+        "apiKey": "{env:NVIDIA_API_KEY_MISTRAL}"
+      },
+      "models": {
+        "plan": {
+          "id": "mistralai/mistral-medium-3.5-128b",
+          "name": "Mistral (planificacion y arquitectura)",
+          "tool_call": true,
+          "reasoning": true,
+          "options": {
+            "reasoning_effort": "high",
+            "max_tokens": 16384,
+            "temperature": 0.5,
+            "top_p": 0.95
+          }
+        },
+        "code": {
+          "id": "mistralai/mistral-medium-3.5-128b",
+          "name": "Mistral (codigo sin razonamiento)",
+          "tool_call": true,
+          "reasoning": false,
+          "options": {
+            "reasoning_effort": "none",
+            "max_tokens": 8192,
+            "temperature": 0.4,
+            "top_p": 0.9
+          }
+        }
+      }
+    },
+    "nvidia-kimi": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "NVIDIA Build - Kimi",
+      "options": {
+        "baseURL": "https://integrate.api.nvidia.com/v1",
+        "apiKey": "{env:NVIDIA_API_KEY_KIMI}"
+      },
+      "models": {
+        "k2": {
+          "id": "moonshotai/kimi-k2-instruct",
+          "name": "Kimi K2 (rapido - 16 tok/s)",
+          "tool_call": true,
+          "reasoning": false,
+          "options": {
+            "max_tokens": 4096,
+            "temperature": 0.6,
+            "top_p": 0.9
+          }
+        }
+      }
+    },
+    "nvidia-qwen": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "NVIDIA Build - Qwen",
+      "options": {
+        "baseURL": "https://integrate.api.nvidia.com/v1",
+        "apiKey": "{env:NVIDIA_API_KEY_QWEN}"
+      },
+      "models": {
+        "coder": {
+          "id": "qwen/qwen3-coder-480b-a35b-instruct",
+          "name": "Qwen3 Coder 480B (detallado - lento)",
+          "tool_call": true,
+          "reasoning": false,
+          "options": {
+            "max_tokens": 4096,
+            "temperature": 0.7,
+            "top_p": 0.8
+          }
+        }
+      }
+    },
+    "google": {
+      "api_key": "{env:GOOGLE_GENERATIVE_AI_API_KEY}",
+      "models": {
+        "flash-lite": {
+          "id": "gemini-2.5-flash-lite",
+          "name": "Gemini 2.5 Flash Lite (ultra rapido)",
+          "tool_call": true,
+          "reasoning": false
+        },
+        "flash": {
+          "id": "gemini-2.5-flash",
+          "name": "Gemini 2.5 Flash (rapido y capaz)",
+          "tool_call": true,
+          "reasoning": true
+        },
+        "pro": {
+          "id": "gemini-2.5-pro",
+          "name": "Gemini 2.5 Pro (razonamiento profundo)",
+          "tool_call": true,
+          "reasoning": true
+        },
+        "g3-pro": {
+          "id": "gemini-3.1-pro-preview",
+          "name": "Gemini 3.1 Pro Preview (mas nuevo)",
+          "tool_call": true,
+          "reasoning": true
+        }
+      }
+    },
+    "nvidia-gptoss": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "NVIDIA Build - GPT-OSS",
+      "options": {
+        "baseURL": "https://integrate.api.nvidia.com/v1",
+        "apiKey": "{env:NVIDIA_API_KEY_GPTOSS}"
+      },
+      "models": {
+        "120b": {
+          "id": "openai/gpt-oss-120b",
+          "name": "GPT-OSS 120B (intermedio - 14s)",
+          "tool_call": true,
+          "reasoning": true,
+          "options": {
+            "max_tokens": 4096,
+            "temperature": 1,
+            "top_p": 1
+          }
+        }
+      }
+    }
+  },
+  "model": "nvidia-gptoss/120b",
+  "small_model": "nvidia-gptoss/120b",
+  "instructions": [
+    "AGENTS.md"
+  ],
+  "mcp": {
+    "brave-search": {
+      "type": "local",
+      "enabled": false,
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "{env:BRAVE_API_KEY}"
+      }
+    },
+    "fetch": {
+      "type": "local",
+      "enabled": true,
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"]
+    }
+  },
+  "permission": {
+    "edit": "ask",
+    "bash": {
+      "git push *": "ask",
+      "rm -rf *": "ask",
+      "npm publish *": "ask",
+      "*": "allow"
+    }
+  }
+}
