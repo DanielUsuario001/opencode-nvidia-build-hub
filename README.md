@@ -1,18 +1,14 @@
-<p align="center">
-  <img src="./assets/readme-hero.png" width="100%" alt="OpenCode NVIDIA Build Hub — identidad visual" />
-</p>
-
 <h1 align="center">OpenCode · NVIDIA Build Hub</h1>
 
 <p align="center">
-  <strong>Plantilla de workspace</strong> para desarrollo asistido con <a href="https://opencode.ai">OpenCode</a> sobre <a href="https://build.nvidia.com">NVIDIA Build</a> (API OpenAI-compatible), con rutas claras para múltiples productos en <code>projects/</code>.
+  Plantilla de workspace para desarrollo asistido con <a href="https://opencode.ai">OpenCode</a> sobre <a href="https://build.nvidia.com">NVIDIA Build</a> (API OpenAI-compatible), con rutas claras para múltiples productos en <code>projects/</code>.
 </p>
 
 <p align="center">
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-0A0A0A?style=for-the-badge&labelColor=1a1a2e" alt="MIT" /></a>
   <a href="https://opencode.ai/docs"><img src="https://img.shields.io/badge/OpenCode-docs-6366F1?style=for-the-badge&labelColor=1a1a2e" alt="OpenCode docs" /></a>
   <a href="https://build.nvidia.com/explore/discover"><img src="https://img.shields.io/badge/NVIDIA-Build-76B900?style=for-the-badge&logo=nvidia&logoColor=white&labelColor=1a1a2e" alt="NVIDIA Build" /></a>
-  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/Stack-Next.js_16-000?style=for-the-badge&logo=nextdotjs&logoColor=white&labelColor=1a1a2e" alt="Stack recomendado" /></a>
+  <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Stack_recomendado-Next.js_16-000?style=for-the-badge&logo=nextdotjs&logoColor=white&labelColor=1a1a2e" alt="Stack recomendado" /></a>
 </p>
 
 <p align="center">
@@ -21,7 +17,13 @@
   <a href="#capacidades">Capacidades</a> ·
   <a href="#inicio-en-3-pasos">Inicio</a> ·
   <a href="#configuración">Configuración</a> ·
-  <a href="#operación-y-seguridad">Operación</a>
+  <a href="#operación">Operación</a>
+</p>
+
+<br />
+
+<p align="center">
+  <img src="./assets/readme-hero.png" width="96%" alt="OpenCode · NVIDIA Build Hub — banderola" />
 </p>
 
 ---
@@ -168,7 +170,7 @@ El archivo **`.env` no se versiona** (`.gitignore`). Usa solo **`.env.example`**
 
 ---
 
-## Operación y seguridad
+## Operación
 
 | Tema | Recomendación |
 |------|----------------|
